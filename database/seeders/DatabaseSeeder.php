@@ -13,25 +13,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-       DB::table("bookshelfs")_>insert([
-        'code'=> 'BS001',
-         'nama'=>'mangga',
-       ]);
-
-       DB::table("bookshelfs")->insert([
-       'code'=> 'BS002',
-       'nama'=> 'lukman',
-       ]);
-
-       DB::table("bookshelfs")->insert([
-        'code'=> 'BS003',
-        'nama'=> 'ujang',
-        ]);
-
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        $this->call([GeneralSeeder::class]);
+        
+    
     }
 }
